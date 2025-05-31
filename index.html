@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boutique Élégance - Perruques et Vêtements</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="Boutique Élégance" height="50" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="d-flex mx-auto w-50">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Rechercher des produits..."
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-heart"></i> Favoris</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-shopping-cart"></i> Panier</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container py-3">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#perruques">Perruques</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#vetements">Vêtements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nouveautes">Nouveautés</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#promotions">Promotions</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Découvrez notre collection exclusive</h1>
+            <p class="lead">
+              Des perruques élégantes et des vêtements tendance pour sublimer
+              votre style
+            </p>
+            <a href="#products" class="btn btn-primary btn-lg"
+              >Voir la collection</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Nos produits populaires</h2>
+        <div class="row g-4" id="product-grid">
+          <!-- Products will be loaded dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>À propos</h5>
+            <p>
+              Boutique Élégance - Votre destination pour des perruques de
+              qualité et des vêtements tendance.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liens rapides</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Nouveautés</a></li>
+              <li><a href="#" class="text-decoration-none">Promotions</a></li>
+              <li><a href="#" class="text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-envelope"></i> contact@boutique-elegance.com
+              </li>
+              <li><i class="fas fa-phone"></i> +237 693 376 346</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

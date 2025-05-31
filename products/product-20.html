@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupe Plissée Midi - Boutique Élégance</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../img/logo.png" alt="Boutique Élégance" height="50" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="d-flex mx-auto w-50">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Rechercher des produits..."
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-heart"></i> Favoris</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../cart.html"
+                  ><i class="fas fa-shopping-cart"></i> Panier</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Product Details -->
+    <main class="container py-5">
+      <div class="row">
+        <!-- Product Images -->
+        <div class="col-md-6">
+          <div class="product-images">
+            <img
+              src="../img/jupe-plissee-midi.jpg"
+              alt="Jupe Plissée Midi"
+              class="img-fluid main-image rounded shadow"
+              onerror="this.src='../img/placeholder.jpg'"
+            />
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-md-6">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../index.html">Accueil</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="../index.html#vetements">Vêtements</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Jupe Plissée Midi
+              </li>
+            </ol>
+          </nav>
+
+          <h1 class="product-title">Jupe Plissée Midi</h1>
+          <p class="product-price mb-4">52 000 FCFA</p>
+
+          <div class="size-selection mb-4">
+            <h5>Taille</h5>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-secondary">S</button
+              ><button type="button" class="btn btn-outline-secondary">M</button
+              ><button type="button" class="btn btn-outline-secondary">
+                L
+              </button>
+            </div>
+          </div>
+
+          <!-- Quantity Selection -->
+          <div class="quantity-selection mb-4">
+            <h5>Quantité</h5>
+            <div class="input-group" style="width: 150px">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="updateQuantity(-1)"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                class="form-control text-center"
+                value="1"
+                min="1"
+                id="quantity"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="updateQuantity(1)"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            class="btn btn-primary btn-lg mb-4 w-100"
+            onclick="addToCart()"
+          >
+            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+          </button>
+
+          <!-- Product Description -->
+          <div class="product-description">
+            <h5>Description</h5>
+            <p>
+              Jupe plissée midi élégante, parfaite pour toutes les occasions.
+            </p>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="additional-info mt-4">
+            <h5>Informations complémentaires</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-truck"></i> Livraison gratuite à partir de
+                50.000 FCFA
+              </li>
+              <li>
+                <i class="fas fa-undo"></i> Retours gratuits sous 30 jours
+              </li>
+              <li><i class="fas fa-shield-alt"></i> Garantie satisfaction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>À propos</h5>
+            <p>
+              Boutique Élégance - Votre destination pour des perruques de
+              qualité et des vêtements tendance.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Liens rapides</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Nouveautés</a></li>
+              <li><a href="#" class="text-decoration-none">Promotions</a></li>
+              <li><a href="#" class="text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-envelope"></i> contact@boutique-elegance.com
+              </li>
+              <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Product data
+      const product = {
+        id: 20,
+        name: "Jupe Plissée Midi",
+        price: 52000,
+        category: "vetements",
+        image: "../img/jupe-plissee-midi.jpg",
+        description:
+          "Jupe plissée midi élégante, parfaite pour toutes les occasions.",
+        sizes: ["S", "M", "L"],
+      };
+
+      function updateQuantity(change) {
+        const input = document.getElementById("quantity");
+        const newValue = parseInt(input.value) + change;
+        if (newValue >= 1) {
+          input.value = newValue;
+        }
+      }
+
+      function addToCart() {
+        const quantity = parseInt(document.getElementById("quantity").value);
+        const size = document.querySelector(
+          ".size-selection .btn.active"
+        )?.textContent;
+
+        if (product.category === "vetements" && !size) {
+          alert("Veuillez sélectionner une taille");
+          return;
+        }
+
+        const cartItem = {
+          ...product,
+          quantity,
+          size,
+        };
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Produit ajouté au panier");
+      }
+
+      // Size selection handling
+      document.querySelectorAll(".size-selection .btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".size-selection .btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
