@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailleur Femme Elegant - Boutique Élégance</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .product-details {
+        padding: 2rem 0;
+      }
+
+      .product-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .product-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .product-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2b2b2b;
+        margin-bottom: 1rem;
+      }
+
+      .product-description {
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .add-to-cart {
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s;
+      }
+
+      .add-to-cart:hover {
+        background-color: #357abd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container">
+        <a href="../index.html" class="navbar-brand">
+          <img src="../img/logo.png" alt="Boutique Élégance" />
+        </a>
+
+        <form class="search-form">
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Rechercher des produits..."
+          />
+          <button type="submit" class="btn btn-outline">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="btn btn-outline">
+              <i class="fas fa-heart"></i> Favoris
+            </a>
+          </li>
+          <li>
+            <a href="../cart.html" class="btn btn-outline">
+              <i class="fas fa-shopping-cart"></i> Panier
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-details">
+        <div class="product-container">
+          <div class="product-image-container">
+            <img
+              src="../img/tailleur-femme-elegant.jpg"
+              alt="Tailleur Femme Elegant"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <h1 class="product-title">Tailleur Femme Elegant</h1>
+            <p class="product-price">175 000 FCFA</p>
+            <div class="product-description">
+              <p>
+                Un tailleur féminin raffiné et élégant, parfait pour le milieu
+                professionnel ou les occasions formelles. Sa coupe impeccable
+                sublime la silhouette.
+              </p>
+              <ul>
+                <li>Coupe sophistiquée</li>
+                <li>Tissu haut de gamme</li>
+                <li>Finitions luxueuses</li>
+                <li>Style professionnel intemporel</li>
+              </ul>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Ajouter au panier
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h5>À propos</h5>
+            <p>
+              Boutique Élégance - Votre destination pour des perruques de
+              qualité et des vêtements tendance.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h5>Liens rapides</h5>
+            <ul>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <i class="fas fa-envelope"></i> contact@boutique-elegance.com
+              </li>
+              <li><i class="fas fa-phone"></i> +237 693 376 346</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

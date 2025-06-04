@@ -1,1 +1,133 @@
- 
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panier - Boutique Élégance</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/logo.png" alt="Boutique Élégance" />
+        </a>
+
+        <form class="search-form">
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Rechercher des produits..."
+          />
+          <button type="submit" class="btn btn-outline">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="btn btn-outline">
+              <i class="fas fa-heart"></i> Favoris
+            </a>
+          </li>
+          <li>
+            <a href="cart.html" class="btn btn-outline">
+              <i class="fas fa-shopping-cart"></i> Panier
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="cart-page">
+        <h1>Votre Panier</h1>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div id="cartItems" class="cart-items">
+              <!-- Les articles du panier seront ajoutés ici par JavaScript -->
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="order-summary">
+              <h2>Résumé de la commande</h2>
+              <div class="summary-item">
+                <span>Sous-total</span>
+                <span id="subtotal">0 FCFA</span>
+              </div>
+              <div class="summary-item">
+                <span>Frais de livraison</span>
+                <span id="shipping">0 FCFA</span>
+              </div>
+              <div class="summary-item total">
+                <span>Total</span>
+                <span id="total">0 FCFA</span>
+              </div>
+
+              <div class="promo-code">
+                <h3>Code promo</h3>
+                <div class="promo-input">
+                  <input
+                    type="text"
+                    id="promoCode"
+                    placeholder="Entrez votre code"
+                  />
+                  <button class="btn btn-outline" onclick="applyPromoCode()">
+                    Appliquer
+                  </button>
+                </div>
+              </div>
+
+              <button
+                id="checkoutBtn"
+                class="btn btn-primary checkout-btn"
+                disabled
+              >
+                Procéder au paiement
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h5>À propos</h5>
+            <p>
+              Boutique Élégance - Votre destination pour des perruques de
+              qualité et des vêtements tendance.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h5>Liens rapides</h5>
+            <ul>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <i class="fas fa-envelope"></i> contact@boutique-elegance.com
+              </li>
+              <li><i class="fas fa-phone"></i> +237 693 376 346</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>

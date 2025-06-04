@@ -3,127 +3,612 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boutique Élégance - Perruques et Vêtements</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>Boutique Élégance - Vêtements et Perruques</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Styles spécifiques à la page d'accueil */
+      .hero-banner {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("img/longue-robe-fleurit.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .category-circles {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .category-circle {
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .category-circle img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border: 3px solid #f8f9fa;
+        transition: transform 0.3s;
+      }
+
+      .category-circle:hover img {
+        transform: scale(1.05);
+      }
+
+      .filters {
+        background: #f8f9fa;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        position: relative;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-card h3 {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #2b2b2b;
+      }
+
+      .badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #ff6b6b;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+    </style>
   </head>
   <body>
-    <!-- Header -->
-    <header class="bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light container">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="img/logo.png" alt="Boutique Élégance" height="50" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
+    <header>
+      <nav class="navbar container">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/logo.png" alt="Boutique Élégance" />
+        </a>
+
+        <form class="search-form">
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Rechercher des produits..."
+          />
+          <button type="submit" class="btn btn-outline">
+            <i class="fas fa-search"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <form class="d-flex mx-auto w-50">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Rechercher des produits..."
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#"
-                  ><i class="fas fa-heart"></i> Favoris</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"
-                  ><i class="fas fa-shopping-cart"></i> Panier</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="container py-3">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#perruques">Perruques</a>
+        </form>
+
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="btn btn-outline">
+              <i class="fas fa-heart"></i> Favoris
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#vetements">Vêtements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#nouveautes">Nouveautés</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#promotions">Promotions</a>
+          <li>
+            <a href="cart.html" class="btn btn-outline">
+              <i class="fas fa-shopping-cart"></i> Panier
+            </a>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1>Découvrez notre collection exclusive</h1>
-            <p class="lead">
-              Des perruques élégantes et des vêtements tendance pour sublimer
-              votre style
-            </p>
-            <a href="#products" class="btn btn-primary btn-lg"
-              >Voir la collection</a
+    <div class="hero-banner">
+      <div class="hero-content">
+        <h1>Découvrez notre collection</h1>
+        <p>
+          Des vêtements élégants et des perruques de qualité pour sublimer votre
+          style
+        </p>
+        <a href="#products" class="btn btn-primary btn-lg">Voir les produits</a>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="category-circles">
+        <a href="#robes" class="category-circle">
+          <img src="img/robe-maxi-ete.jpg" alt="Robes" />
+          <h3>Robes</h3>
+        </a>
+        <a href="#ensembles" class="category-circle">
+          <img src="img/ensemble-raye.jpg" alt="Ensembles" />
+          <h3>Ensembles</h3>
+        </a>
+        <a href="#perruques" class="category-circle">
+          <img src="img/perruque-bresilienne.jpg" alt="Perruques" />
+          <h3>Perruques</h3>
+        </a>
+        <a href="#accessoires" class="category-circle">
+          <img src="img/sac-a-main.jpg" alt="Accessoires" />
+          <h3>Accessoires</h3>
+        </a>
+      </section>
+
+      <section class="filters">
+        <h2>Filtrer par</h2>
+        <div class="filter-buttons">
+          <button class="btn btn-outline active" data-filter="all">
+            Tous les produits
+          </button>
+          <button class="btn btn-outline" data-filter="nouveautes">
+            Nouveautés
+          </button>
+          <button class="btn btn-outline" data-filter="promotions">
+            Promotions
+          </button>
+          <button class="btn btn-outline" data-filter="populaires">
+            Plus populaires
+          </button>
+        </div>
+      </section>
+
+      <section id="products" class="products">
+        <h2>Nos produits</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <a href="products/product-sac-a-main.html">
+              <div class="badge">Nouveau</div>
+              <img src="img/sac-a-main.jpg" alt="Sac a main" />
+              <div class="product-info">
+                <h3>Sac a Main</h3>
+                <p class="price">85 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-moulante.html">
+              <div class="badge">Populaire</div>
+              <img
+                src="img/longue-robe-moulante.jpg"
+                alt="Longue robe moulante"
+              />
+              <div class="product-info">
+                <h3>Longue Robe Moulante</h3>
+                <p class="price">98 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-casual.html">
+              <img src="img/robe-casual.jpg" alt="Robe casual" />
+              <div class="product-info">
+                <h3>Robe Casual</h3>
+                <p class="price">131 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-chinoise.html">
+              <div class="badge">Promo -15%</div>
+              <img src="img/perruque-chinoise.jpg" alt="Perruque chinoise" />
+              <div class="product-info">
+                <h3>Perruque Chinoise</h3>
+                <p class="price">92 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-fleurit.html">
+              <img
+                src="img/longue-robe-fleurit.jpg"
+                alt="Longue robe fleurit"
+              />
+              <div class="product-info">
+                <h3>Longue Robe Fleurit</h3>
+                <p class="price">115 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-courtes-manches.html">
+              <div class="badge">Nouveau</div>
+              <img
+                src="img/robe-courtes-manches.jpg"
+                alt="Robe courtes manches"
+              />
+              <div class="product-info">
+                <h3>Robe Courtes Manches</h3>
+                <p class="price">78 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-ensemble-robe-haut-fleurit.html">
+              <img
+                src="img/ensemble-robe-haut-fleurit.jpg"
+                alt="Ensemble robe haut fleurit"
+              />
+              <div class="product-info">
+                <h3>Ensemble Robe Haut Fleurit</h3>
+                <p class="price">145 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-ensemble-jupe-top-raye.html">
+              <div class="badge">Promo -20%</div>
+              <img
+                src="img/ensemble-jupe-top-raye.jpg"
+                alt="Ensemble jupe top raye"
+              />
+              <div class="product-info">
+                <h3>Ensemble Jupe Top Raye</h3>
+                <p class="price">125 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-longue-manches.html">
+              <img
+                src="img/longue-robe-longue-manches.jpg"
+                alt="Longue robe longue manches"
+              />
+              <div class="product-info">
+                <h3>Longue Robe Longue Manches</h3>
+                <p class="price">108 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-tricotee.html">
+              <div class="badge">Populaire</div>
+              <img src="img/robe-tricotee.jpg" alt="Robe tricotee" />
+              <div class="product-info">
+                <h3>Robe Tricotee</h3>
+                <p class="price">95 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-sans-manches.html">
+              <img
+                src="img/longue-robe-sans-manches.jpg"
+                alt="Longue robe sans manches"
+              />
+              <div class="product-info">
+                <h3>Longue Robe Sans Manches</h3>
+                <p class="price">112 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-mini-robe-moulante.html">
+              <div class="badge">Nouveau</div>
+              <img src="img/mini robe moulante.jpg" alt="Mini robe moulante" />
+              <div class="product-info">
+                <h3>Mini Robe Moulante</h3>
+                <p class="price">88 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-ensemble-raye.html">
+              <img src="img/ensemble-raye.jpg" alt="Ensemble raye" />
+              <div class="product-info">
+                <h3>Ensemble Raye</h3>
+                <p class="price">135 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-carreau.html">
+              <div class="badge">Promo -10%</div>
+              <img src="img/robe-carreau.jpg" alt="Robe carreau" />
+              <div class="product-info">
+                <h3>Robe Carreau</h3>
+                <p class="price">105 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-haut-demembre.html">
+              <img src="img/haut-demembre.jpg" alt="Haut demembre" />
+              <div class="product-info">
+                <h3>Haut Demembre</h3>
+                <p class="price">65 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-tailleur-femme-elegant.html">
+              <div class="badge">Populaire</div>
+              <img
+                src="img/tailleur-femme-elegant.jpg"
+                alt="Tailleur femme elegant"
+              />
+              <div class="product-info">
+                <h3>Tailleur Femme Elegant</h3>
+                <p class="price">175 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-mini-robe-dos-nue.html">
+              <img src="img/mini-robe-dos-nue.jpg" alt="Mini robe dos nue" />
+              <div class="product-info">
+                <h3>Mini Robe Dos Nue</h3>
+                <p class="price">95 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-fleurit.html">
+              <div class="badge">Nouveau</div>
+              <img src="img/robe-fleurit.jpg" alt="Robe fleurit" />
+              <div class="product-info">
+                <h3>Robe Fleurit</h3>
+                <p class="price">118 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-ensemble-longue-jupe-top.html">
+              <img
+                src="img/ensemble-longue-jupe-top.jpg"
+                alt="Ensemble longue jupe top"
+              />
+              <div class="product-info">
+                <h3>Ensemble Longue Jupe Top</h3>
+                <p class="price">142 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-robe-maxi-ete.html">
+              <div class="badge">Promo -15%</div>
+              <img src="img/robe-maxi-ete.jpg" alt="Robe maxi ete" />
+              <div class="product-info">
+                <h3>Robe Maxi Ete</h3>
+                <p class="price">128 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a
+              href="products/product-ensemble-jupe-top-raye-longue-manches.html"
             >
+              <img
+                src="img/ensemble-jupe-top-raye-longue-manches.jpg"
+                alt="Ensemble jupe top raye longue manches"
+              />
+              <div class="product-info">
+                <h3>Ensemble Jupe Top Raye Longue Manches</h3>
+                <p class="price">155 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-ensemble-haut-pantalon-zara.html">
+              <div class="badge">Populaire</div>
+              <img
+                src="img/ensemble-haut-pantalon-zara.jpg"
+                alt="Ensemble haut pantalon zara"
+              />
+              <div class="product-info">
+                <h3>Ensemble Haut Pantalon Zara</h3>
+                <p class="price">165 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-mini-robe-plissee.html">
+              <img src="img/mini-robe-plissee.jpg" alt="Mini robe plissee" />
+              <div class="product-info">
+                <h3>Mini Robe Plissee</h3>
+                <p class="price">92 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-ete.html">
+              <div class="badge">Nouveau</div>
+              <img src="img/longue-robe-ete.jpg" alt="Longue robe ete" />
+              <div class="product-info">
+                <h3>Longue Robe Ete</h3>
+                <p class="price">138 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-pixie-moderne.html">
+              <div class="badge">Promo -20%</div>
+              <img
+                src="img/perruque-pixie-moderne.jpg"
+                alt="Perruque pixie moderne"
+              />
+              <div class="product-info">
+                <h3>Perruque Pixie Moderne</h3>
+                <p class="price">85 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-indienne.html">
+              <img src="img/perruque-indienne.jpg" alt="Perruque indienne" />
+              <div class="product-info">
+                <h3>Perruque Indienne</h3>
+                <p class="price">125 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-tresses-africaines.html">
+              <div class="badge">Populaire</div>
+              <img
+                src="img/perruque-tresses-africaines.jpg"
+                alt="Perruque tresses africaines"
+              />
+              <div class="product-info">
+                <h3>Perruque Tresses Africaines</h3>
+                <p class="price">145 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-bresilienne.html">
+              <div class="badge">Nouveau</div>
+              <img
+                src="img/perruque-bresilienne.jpg"
+                alt="Perruque bresilienne"
+              />
+              <div class="product-info">
+                <h3>Perruque Bresilienne</h3>
+                <p class="price">168 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-perruque-carre-plongeant.html">
+              <img
+                src="img/perruque-carre-plongeant.jpg"
+                alt="Perruque carre plongeant"
+              />
+              <div class="product-info">
+                <h3>Perruque Carre Plongeant</h3>
+                <p class="price">95 000 FCFA</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <a href="products/product-longue-robe-sans-manche.html">
+              <div class="badge">Promo -10%</div>
+              <img
+                src="img/longue-robe-sans-manche.jpg"
+                alt="Longue robe sans manche"
+              />
+              <div class="product-info">
+                <h3>Longue Robe Sans Manche</h3>
+                <p class="price">158 000 FCFA</p>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Featured Products -->
-    <section id="products" class="py-5">
+    <footer>
       <div class="container">
-        <h2 class="text-center mb-4">Nos produits populaires</h2>
-        <div class="row g-4" id="product-grid">
-          <!-- Products will be loaded dynamically via JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-light py-4 mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
+        <div class="footer-content">
+          <div class="footer-section">
             <h5>À propos</h5>
             <p>
               Boutique Élégance - Votre destination pour des perruques de
               qualité et des vêtements tendance.
             </p>
           </div>
-          <div class="col-md-4">
+          <div class="footer-section">
             <h5>Liens rapides</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-decoration-none">Nouveautés</a></li>
-              <li><a href="#" class="text-decoration-none">Promotions</a></li>
-              <li><a href="#" class="text-decoration-none">Contact</a></li>
+            <ul>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="footer-section">
             <h5>Contact</h5>
-            <ul class="list-unstyled">
+            <ul>
               <li>
                 <i class="fas fa-envelope"></i> contact@boutique-elegance.com
               </li>
@@ -134,7 +619,18 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Gestion des filtres
+      document.querySelectorAll(".filter-buttons .btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-buttons .btn")
+            .forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          // Ajouter ici la logique de filtrage des produits
+        });
+      });
+    </script>
   </body>
 </html>

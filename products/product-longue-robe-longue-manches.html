@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Longue robe longue manches</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Accueil</a></li>
+        <li class="breadcrumb-item">
+          <a href="../categories/vetements.html">Vêtements</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Longue robe longue manches
+        </li>
+      </ol>
+    </nav>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="../img/longue-robe-longue-manches.jpg"
+            alt="Longue robe longue manches"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <h1>Longue robe longue manches</h1>
+          <p class="text-muted">Catégorie : Vêtements</p>
+          <p>
+            Une robe longue à manches longues, élégante et parfaite pour toutes
+            les saisons.
+          </p>
+          <form id="addToCartForm">
+            <div class="mb-3">
+              <label for="size" class="form-label">Taille</label>
+              <select class="form-select" id="size" required>
+                <option value="">Choisir la taille</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">Quantité</label>
+              <input
+                type="number"
+                class="form-control"
+                id="quantity"
+                value="1"
+                min="1"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Ajouter au panier
+            </button>
+          </form>
+          <div class="mt-3">
+            <span class="badge bg-success"
+              >Livraison gratuite à partir de 5 commandes</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+      document
+        .getElementById("addToCartForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const size = document.getElementById("size").value;
+          const quantity = parseInt(document.getElementById("quantity").value);
+          const product = {
+            name: "Longue robe longue manches",
+            image: "../img/longue-robe-longue-manches.jpg",
+            price: 17900,
+            size: size,
+            quantity: quantity,
+          };
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.push(product);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert("Produit ajouté au panier !");
+        });
+    </script>
+  </body>
+</html>

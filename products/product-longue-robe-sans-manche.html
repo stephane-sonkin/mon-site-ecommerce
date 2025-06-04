@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Longue Robe Sans Manche - Boutique Élégance</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .product-details {
+        padding: 2rem 0;
+      }
+
+      .product-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .product-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .product-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2b2b2b;
+        margin-bottom: 1rem;
+      }
+
+      .product-description {
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .add-to-cart {
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s;
+      }
+
+      .add-to-cart:hover {
+        background-color: #357abd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container">
+        <a href="../index.html" class="navbar-brand">
+          <img src="../img/logo.png" alt="Boutique Élégance" />
+        </a>
+
+        <form class="search-form">
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Rechercher des produits..."
+          />
+          <button type="submit" class="btn btn-outline">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="btn btn-outline">
+              <i class="fas fa-heart"></i> Favoris
+            </a>
+          </li>
+          <li>
+            <a href="../cart.html" class="btn btn-outline">
+              <i class="fas fa-shopping-cart"></i> Panier
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-details">
+        <div class="product-container">
+          <div class="product-image-container">
+            <img
+              src="../img/longue-robe-sans-manche.jpg"
+              alt="Longue Robe Sans Manche"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <h1 class="product-title">Longue Robe Sans Manche</h1>
+            <p class="product-price">158 000 FCFA</p>
+            <div class="product-description">
+              <p>
+                Une longue robe élégante sans manche, parfaite pour les
+                occasions spéciales. Sa coupe fluide et sa silhouette épurée
+                créent une allure sophistiquée et intemporelle.
+              </p>
+              <ul>
+                <li>Design sans manche élégant</li>
+                <li>Tissu fluide de haute qualité</li>
+                <li>Longueur maxi flatteuse</li>
+                <li>Style sophistiqué et moderne</li>
+              </ul>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Ajouter au panier
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h5>À propos</h5>
+            <p>
+              Boutique Élégance - Votre destination pour des perruques de
+              qualité et des vêtements tendance.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h5>Liens rapides</h5>
+            <ul>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <i class="fas fa-envelope"></i> contact@boutique-elegance.com
+              </li>
+              <li><i class="fas fa-phone"></i> +237 693 376 346</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Accueil</a></li>
+        <li class="breadcrumb-item">
+          <a href="../categories/vetements.html">Vêtements</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Longue robe sans manche
+        </li>
+      </ol>
+    </nav>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="../img/longue-robe-sans-manche.jpg"
+            alt="Longue robe sans manche"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <h1>Longue robe sans manche</h1>
+          <p class="text-muted">Catégorie : Vêtements</p>
+          <p>
+            Une robe longue sans manche, élégante et fluide, parfaite pour
+            l'été.
+          </p>
+          <form id="addToCartForm">
+            <div class="mb-3">
+              <label for="size" class="form-label">Taille</label>
+              <select class="form-select" id="size" required>
+                <option value="">Choisir la taille</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">Quantité</label>
+              <input
+                type="number"
+                class="form-control"
+                id="quantity"
+                value="1"
+                min="1"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Ajouter au panier
+            </button>
+          </form>
+          <div class="mt-3">
+            <span class="badge bg-success"
+              >Livraison gratuite à partir de 5 commandes</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+      document
+        .getElementById("addToCartForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const size = document.getElementById("size").value;
+          const quantity = parseInt(document.getElementById("quantity").value);
+          const product = {
+            name: "Longue robe sans manche",
+            image: "../img/longue-robe-sans-manche.jpg",
+            price: 16900,
+            size: size,
+            quantity: quantity,
+          };
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.push(product);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert("Produit ajouté au panier !");
+        });
+    </script>
+  </body>
+</html>
